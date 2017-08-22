@@ -1,0 +1,30 @@
+{
+  "name": "interdependent",
+  "version": "0.1.0",
+  "description": "Tool to describe a projects modules interdependancy",
+  "bin": {
+    "id": "bin/id"
+  },
+  "scripts": {
+    "test": "JUNIT_REPORT_PATH=./reports/test-report.xml node_modules/.bin/istanbul cover --dir=reports/coverage _mocha -- --reporter mocha-jenkins-reporter test; true"
+  },
+  "keywords": [
+    "dependency",
+    "tool",
+    "cli"
+  ],
+  "author": "Brad van der Laan",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0",
+    "mocha-jenkins-reporter": "^0.3.8",
+    "sinon": "^3.2.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "commander": "^2.11.0"
+  }
+}

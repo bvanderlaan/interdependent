@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+'use strict';
+
+const program = require('commander');
+
+const { version } = require('../package.json');
+const walkDeps = require('../lib/walkDeps');
+
+function parseCSV(input) {
+  return input.split(',');
+}
+
+program.version(version)
+  .option('-x, --exclude <items>', 'Comma separated list of paths to exclude', parseCSV)
+  .option('-z, --nozero', 'If set ignore files with zero inter dependencies')
+  .option('-Z, --onlyzero', 'If set only shows files with zero inter dependencies')
+  .action(walkDeps)
+  .parse(process.argv);
