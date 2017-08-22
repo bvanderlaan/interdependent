@@ -1,9 +1,10 @@
 {
   "name": "interdependent",
-  "version": "0.1.0",
-  "description": "Tool to describe a projects modules interdependancy",
+  "version": "0.2.0",
+  "description": "Tool to describe a projects modules interdependency",
   "bin": {
-    "id": "bin/id"
+    "interdependent": "bin/interdependent",
+    "idep": "bin/interdependent"
   },
   "scripts": {
     "test": "JUNIT_REPORT_PATH=./reports/test-report.xml node_modules/.bin/istanbul cover --dir=reports/coverage _mocha -- --reporter mocha-jenkins-reporter test; true"
